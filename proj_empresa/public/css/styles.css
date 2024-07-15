@@ -1,0 +1,50 @@
+/*** styles global***/
+
+* {
+    font-family: Crimson Text;
+}
+
+/* NAV BAR */
+
+.navbar-config{
+    background-color: rgba(239, 239, 239, 0.23);
+    border-radius: 25px;
+    border: groove 1px;
+    font-size: 1.2em;
+}
+
+
+/* END OF NAV BAR */
+
+
+/* footer */
+
+.footer {
+    margin-top: 20px;
+    background-color: black;
+    height: 100%;
+    
+    color: white;
+
+}
+
+
+
+.footer-config {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.footer-config img{
+    margin-bottom: 15px;
+    width: 200px;
+    border-radius: 150px;
+    
+}
+
+.footer-config p {
+    padding: 0;
+    margin: 5px;
+}
