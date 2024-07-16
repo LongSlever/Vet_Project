@@ -23,7 +23,7 @@
     margin-top: 20px;
     background-color: black;
     height: 100%;
-    
+
     color: white;
 
 }
@@ -41,10 +41,11 @@
     margin-bottom: 15px;
     width: 200px;
     border-radius: 150px;
-    
+
 }
 
 .footer-config p {
     padding: 0;
     margin: 5px;
 }
+

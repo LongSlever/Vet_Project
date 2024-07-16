@@ -17,7 +17,7 @@
               <a href=""><img src="" alt=""> </a>
             </div>
           </div>
-          
+
         <div class="row">
             <div class="col-md-4 ">
               <div >Developed by Vitor Augusto. Just a fictional petshop website made in honor of my dogs</div>
@@ -33,7 +33,7 @@
               <div class=""></div>
             </div>
         </div>
-            
+
     </footer>
 </section>
 
@@ -41,7 +41,7 @@
 
 <script>
     $(function() {
-        $('#tb_default').DataTable({
+        $('#vitor').DataTable({
             "paging": true,
             "lenghtChange": true,
             "searching": true,
@@ -54,7 +54,21 @@
             }
 
         });
-    }
+    })
 
-    )
+    $(function() {
+        $('#grid_clientes').DataTable({
+            "paging": true,
+            "lenghtChange": true,
+            "searching": true,
+            "ordering": true,
+            "info":true,
+            "autoWidth": true,
+            "responsive": true,
+            "language": {
+               "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+            }
+
+        });
+    })
 </script>

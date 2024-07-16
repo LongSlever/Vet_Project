@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
+            // um para muitos
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients')
+            ->onDelete('set null');
+
             $table->string('name');
             $table->string('breed'); // raça
             $table->string('specie');
