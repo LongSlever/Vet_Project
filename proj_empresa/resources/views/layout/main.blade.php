@@ -31,7 +31,10 @@
                 <a class="nav-link" href="/pet">Your Pets</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link " href="# tabindex="-1" aria-disabled="true">Your Cart</a>
+                <a class="nav-link " href="/procedure"-1" aria-disabled="true">Procedure</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " href="/vet"-1" aria-disabled="true">Vets</a>
                 </li>
             </ul>
             </div>

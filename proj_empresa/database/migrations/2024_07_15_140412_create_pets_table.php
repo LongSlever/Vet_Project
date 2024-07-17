@@ -16,7 +16,7 @@ return new class extends Migration
             // um para muitos
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')
-            ->onDelete('set null');
+            ->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('name');
             $table->string('breed'); // raça

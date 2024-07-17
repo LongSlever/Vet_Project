@@ -2,5 +2,5 @@
 
 
 @section('body');
-    <button><a href="/client/new"> New </a>  </button>
+        <a href="/client" class="btn btn-success">Teste</a>
 @endsection
