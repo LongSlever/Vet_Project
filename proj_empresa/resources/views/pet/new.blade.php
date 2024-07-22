@@ -112,7 +112,7 @@ function add_client_to_pet(element) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <table id="grid_clients" class="table table-bordered table-striped" >
+      <table id="grid" class="table table-bordered table-striped" >
                         <thead>
                             <tr>
                                 <th hidden></th>

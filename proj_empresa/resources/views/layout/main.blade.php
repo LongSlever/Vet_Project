@@ -36,6 +36,9 @@
                 <li class="nav-item">
                 <a class="nav-link " href="/vet"-1" aria-disabled="true">Vets</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link " href="/consultation"-1" aria-disabled="true">Consultation</a>
+                </li>
             </ul>
             </div>
         </div>

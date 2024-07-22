@@ -50,20 +50,20 @@
             "autoWidth": false,
             "responsive": true,
             "language": {
-               "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
             }
 
         });
     })
 
     $(function() {
-        $('#grid_clientes').DataTable({
-            "paging": true,
-            "lenghtChange": true,
+        $('#grid').DataTable({
+            "paging": false,
+            "lenghtChange": false,
             "searching": true,
             "ordering": true,
-            "info":true,
-            "autoWidth": true,
+            "info":false,
+            "autoWidth": false,
             "responsive": true,
             "language": {
                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"

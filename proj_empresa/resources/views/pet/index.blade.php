@@ -2,7 +2,7 @@
 
 @section('body')
 
-<div class="alert alert-success" role="alert">
+<div class="alert alert-success mt-2" role="alert">
     <h2>Pets</h2>
 </div>
 
