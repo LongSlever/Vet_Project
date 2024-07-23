@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-body no-padding">
-                <form role="form" action="/client" method="post">
+                <form role="form" action="/client" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -36,6 +36,7 @@
                         <label for="city" class="form-label">City</label>
                         <input type="city" required name="city" class="form-control" id="city">
                     </div>
+
                     <div class="mb-3">
                         <label for="uf" class="form-label">States</label>
                         <select id="uf" required name="uf" class="form-control">
@@ -68,6 +69,10 @@
                             <option value="TO">Tocantins</option>
                             <option value="EX">Estrangeiro</option>
                         </select>
+                    </div>
+                    <div class="mb-3">
+                            <label for="photo" class="form-label">Choose a photo of you</label>
+                            <input class="form-control" type="file" id="photo" name="photo">
                     </div>
                     <div class="box-footer">
                     <button type="submit" class="btn btn-success">Save</button>

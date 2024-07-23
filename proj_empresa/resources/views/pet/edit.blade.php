@@ -37,7 +37,7 @@ function add_client_to_pet(element) {
                             <input type="text" hidden required name="client_id" value="{{$pet->client->id}}" class="form-control" id="client_id"
                             onkeydown="return false;">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#owners">
-                                Selecionar cliente
+                                Select client
                             </button>
                         </div>
 

@@ -34,12 +34,18 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $client = new Client();
+
         $client->name = $request->input('name');
         $client->email = $request->input('email');
         $client->cell_phone = $request->input('cellphone');
         $client->address = $request->input('address');
         $client->city = $request->input('city');
         $client->uf = $request->input('uf');
+        if(!$request->file('photo')) {
+            $client->photo = "";
+        }else {
+            $client->photo = $request->file('photo')->store('photos/clients');
+        }
 
         $client->save();
 
@@ -72,8 +78,13 @@ class ClientController extends Controller
     public function update(Request $request, string $id)
     {
         $client= Client::find($id);
-
+        $no_photo = $request->input('no_photo');
         if(isset($client)) {
+            if ($no_photo) {
+                $client->photo = "";
+            } elseif ($request->hasFile('photo')) {
+                $client->photo = $request->file('photo')->store('photos/clients');
+            }
             $client->name = $request->input('name');
             $client->email = $request->input('email');
             $client->cell_phone = $request->input('cellphone');
@@ -82,7 +93,7 @@ class ClientController extends Controller
             $client->uf = $request->input('uf');
 
             $client->save();
-            
+
             return redirect ('/client');
         }
     }

@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-body no-padding">
-                <form role="form" action="/client/{{$client->id}}" method="post">
+                <form role="form" action="/client/{{$client->id}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -73,6 +73,13 @@
                             <option value="TO">Tocantins</option>
                             <option value="EX">Estrangeiro</option>
                         </select>
+                    </div>
+                    <div class="mb-3">
+                            <label for="photo" class="form-label">Choose a photo of you</label>
+                            <input class="form-control" type="file" id="photo" name="photo">
+                            <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="'no_photo" name="no_photo">
+                            <label for="no_photo" class="no_photo"> No photo </label>
                     </div>
                     <div class="box-footer">
                     <button type="submit" class="btn btn-success">Save</button>

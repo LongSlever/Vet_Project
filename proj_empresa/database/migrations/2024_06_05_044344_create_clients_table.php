@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('cell_phone')->nullable();
             $table->string('address')->nullable();
             $table->string('city');
-            $table->string('UF')->nullable(); 
+            $table->string('UF')->nullable();
+            $table->string('photo');
             $table->timestamps();
         });
     }

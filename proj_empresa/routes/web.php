@@ -6,9 +6,12 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\ProcedureController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\VetController;
+use App\Models\Client;
 use App\Models\Consultation;
 use App\Models\Vet;
+use Illuminate\Contracts\Pagination\Paginator;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +25,8 @@ use App\Models\Vet;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $clients = Client::all();
+    return view('index', compact('clients'));
 });
 
 // clients
@@ -92,3 +96,11 @@ Route::post('/consultation', [ConsultationController::class,'store']);
 Route::get('/consultation/delete/{id}', [ConsultationController::class,'destroy']);
 
 Route::get('/consultation/show/{id}', [ConsultationController::class,'show']);
+
+
+//report
+
+
+Route::get('/report', [ReportController::class,'index']);
+
+Route::post('/report/show', [ReportController::class,'show']);

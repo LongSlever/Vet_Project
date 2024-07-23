@@ -16,7 +16,8 @@ class Client extends Model
         'cell_phone',
         'address',
         'city',
-        'UF'
+        'UF',
+        'photo'
 
     ];
 

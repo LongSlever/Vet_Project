@@ -1,41 +1,36 @@
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-<section class="footer">
-    <footer  class="container footer-config">
-        <div class="row">
-            <div class="col-md-4">
-              <div class=""><img src="{{ asset('img/logoaisa.png') }}" alt=""></div>
+<footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            2215 John Daniel Drive
+                            <br />
+                            Clark, MO 65243
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <p class="lead mb-0">
+                            Freelance is a free to use, MIT licensed Bootstrap theme created by
+                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                            .
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 ">
-              <div class="">Technologies</div>
-              <p>PHP</p>
-              <p>Laravel</p>
-              <p>Bootstrap</p>
-              <p>Composer</p>
-            </div>
-            <div class="col-md-4">
-              <div class="">Social Medias</div>
-              <a href=""><img src="" alt=""> </a>
-            </div>
-          </div>
-
-        <div class="row">
-            <div class="col-md-4 ">
-              <div >Developed by Vitor Augusto. Just a fictional petshop website made in honor of my dogs</div>
-            </div>
-            <div class="col-md-4">
-              <div class="">Documentation</div>
-              <p> <a href="https://www.php.net/docs.php">PHP</a></p>
-              <p><a href="https://laravel.com/docs/10.x">Laravel</a></p>
-              <p><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Bootstrap</a></p>
-              <p><a href="https://getcomposer.org/doc/">Composer</a></p>
-            </div>
-            <div class="col-md-4">
-              <div class=""></div>
-            </div>
-        </div>
-
-    </footer>
-</section>
+        </footer>
 
 
 

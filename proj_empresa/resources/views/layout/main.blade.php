@@ -31,13 +31,16 @@
                 <a class="nav-link" href="/pet">Your Pets</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link " href="/procedure"-1" aria-disabled="true">Procedure</a>
+                <a class="nav-link " href="/procedure"-1" aria-disabled="true">Procedures</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link " href="/vet"-1" aria-disabled="true">Vets</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link " href="/consultation"-1" aria-disabled="true">Consultation</a>
+                <a class="nav-link " href="/consultation"-1" aria-disabled="true">Consultations</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " href="/report"-1" aria-disabled="true">Reports</a>
                 </li>
             </ul>
             </div>
