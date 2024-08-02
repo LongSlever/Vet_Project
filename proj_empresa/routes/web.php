@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ReportController;
@@ -24,9 +26,16 @@ use Illuminate\Contracts\Pagination\Paginator;
 |
 */
 
-Route::get('/', function () {
-    $clients = Client::all();
-    return view('index', compact('clients'));
+Route::get('/',[HomeController::class, 'index']);
+
+// auth
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAction')->name('login.action');
+
+    Route::get('logout', 'logout')->middleware('user-access')->name('logout');
 });
 
 // clients
@@ -41,6 +50,13 @@ Route::get('/client/edit/{id}',[ClientController::class, 'edit']);
 Route::post('/client/{id}',[ClientController::class,'update']);
 
 Route::get('/client/delete/{id}', [ClientController::class,'destroy']);
+
+Route::middleware('user-access')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+
+
+});
+Route::get('/client/profile', [ClientController::class,'profile']);
 
 // pets
 

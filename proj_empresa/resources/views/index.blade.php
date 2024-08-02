@@ -23,7 +23,7 @@
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Clients Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our clients</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our vets</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -33,20 +33,15 @@
                 <!-- Clients Grid Items-->
                 <div class="row justify-content-center">
                     <!-- Clients Item 1-->
-                     @foreach ( $clients as $client )
-
-
                     <div class="col-md-6 col-lg-4 mb-5">
-                    <p class="justify-content-center">  {{$client->name}}</p>
+                    <p class="justify-content-center"> </p>
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center ">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid img-border" src="{{asset('storage/' .$client->photo)}}" alt="..."/>
+                            <img class="img-fluid img-border" src="" alt="..."/>
                         </div>
                     </div>
-                    @endforeach
-
                 </div>
             </div>
         </section>

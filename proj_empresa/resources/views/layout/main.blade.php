@@ -15,20 +15,15 @@
   <div class="container">
         <nav class="navbar navbar-expand-lg navbar-config">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img style="width: 150px; border-radius: 150px" src="{{ asset('img/logoaisa.png') }}" alt=""></a>
+            <a class="navbar-brand" href="/"> <img style="width: 150px; border-radius: 150px" src="{{ asset('img/logoaisa.png') }}" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav col justify-content-center">
+            <ul class="navbar-nav col justify-content-center ">
+            @if (Auth::guard('web')->check())
                 <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/client">Profile</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/pet">Your Pets</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link " href="/procedure"-1" aria-disabled="true">Procedures</a>
@@ -37,11 +32,40 @@
                 <a class="nav-link " href="/vet"-1" aria-disabled="true">Vets</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link " href="/consultation"-1" aria-disabled="true">Consultations</a>
-                </li>
-                <li class="nav-item">
                 <a class="nav-link " href="/report"-1" aria-disabled="true">Reports</a>
                 </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/client/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/pet/new"> New Pet</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " href="/consultation/new"-1" aria-disabled="true"> New Consultations</a>
+                </li>
+            @endif
+
+                @if (Route::has('login'))
+                @if (Auth::guard('web')->check() || Auth::guard('clients')->check())
+                <li class="nav-item  rounded border border-dark-subtle m-2">
+                    <a class="nav-link " href="/logout" aria-disabled="true">Sign out</a>
+                </li>
+
+                @else
+                <li class="nav-item  rounded border border-dark-subtle m-2">
+                    <a class="nav-link " href="/login" aria-disabled="true">Log in</a>
+                </li>
+                @if (Route::has('register'))
+                <li class="nav-item  rounded border border-dark-subtle m-2">
+                    <a class="nav-link " href="/register" aria-disabled="true">Register</a>
+                </li>
+                @endif
+                @endif
+                @endif
             </ul>
             </div>
         </div>
@@ -50,8 +74,6 @@
             @hasSection('body')
                 @yield('body')
             @endif
-
-
   </div>
 
 

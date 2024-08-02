@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Consultation;
+use App\Models\Pet;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class ClientController extends Controller
 {
+    public function __construct() {
+        $this->middleware("user-access");
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -36,6 +43,7 @@ class ClientController extends Controller
         $client = new Client();
 
         $client->name = $request->input('name');
+        $client->password = Hash::make($request->input('password'));
         $client->email = $request->input('email');
         $client->cell_phone = $request->input('cellphone');
         $client->address = $request->input('address');
@@ -55,9 +63,10 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        //
+        $client = Client::find($id);
+        echo('Hi'. $id);
     }
 
     /**
@@ -94,7 +103,7 @@ class ClientController extends Controller
 
             $client->save();
 
-            return redirect ('/client');
+            return redirect ('/client/profile');
         }
     }
 
@@ -110,5 +119,23 @@ class ClientController extends Controller
 
             return redirect('/client');
         }
+    }
+
+    public function profile() {
+        $petsAll = Pet::all();
+        $pets = array();
+        $consultationsAll = Consultation::all();
+        $consultations = array();
+        foreach ($petsAll as $pet) {
+            if ($pet->client_id === Auth::guard('clients')->user()->id) {
+                $pets[] = $pet;
+                foreach ($consultationsAll as $consultation) {
+                if ($pet->id == $consultation->pet_id) {
+                    $consultations[] = $consultation;
+                }
+            }
+        }
+    }
+        return view('client.profile', compact('pets', 'consultations'));
     }
 }

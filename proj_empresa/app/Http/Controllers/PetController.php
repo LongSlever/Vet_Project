@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class PetController extends Controller
 {
+    public function __construct() {
+        $this->middleware("user-access");
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -62,7 +66,7 @@ class PetController extends Controller
 
         $pet->save();
 
-        return redirect('/pet');
+        return redirect('/client/profile');
 
         }
 

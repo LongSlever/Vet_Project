@@ -199,7 +199,7 @@ document.getElementById('memo_procedures').value= my_json;
                     </div>
 
                     <div class="form-group mt-2 mb-2">
-                            <input type="text" hidden required name="vet_id" class="form-control" id="vet_id"
+                            <input type="text"  required name="vet_id" class="form-control" id="vet_id"
                             onkeydown="return false;">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vets">
                                 Select your vet

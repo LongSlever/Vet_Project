@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 
 class ConsultationController extends Controller
 {
+    public function __construct() {
+        $this->middleware("user-access");
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -42,7 +46,7 @@ class ConsultationController extends Controller
     {
         $pet = Pet::find($request->input('pet_id'));
 
-        $vet = Pet::find($request->input('vet_id'));
+        $vet = Vet::find($request->input('vet_id'));
 
         $consultation = new Consultation();
 

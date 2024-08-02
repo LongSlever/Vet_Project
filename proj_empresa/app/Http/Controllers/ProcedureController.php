@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ProcedureController extends Controller
 {
+    public function __construct() {
+        $this->middleware("user-access");
+    }
+
     /**
      * Display a listing of the resource.
      */
